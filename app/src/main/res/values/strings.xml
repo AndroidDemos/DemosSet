@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">KkyDemo</string>
+    <string name="title_home">NormalView</string>
+    <string name="title_dashboard">Ui</string>
+    <string name="title_notifications">Events</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+</resources>
