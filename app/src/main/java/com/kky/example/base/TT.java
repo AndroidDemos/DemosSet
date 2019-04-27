@@ -1,7 +1,7 @@
 package com.kky.example.base;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.kky.example.base.fragment.BaseFragment;
 

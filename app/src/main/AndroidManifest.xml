@@ -2,23 +2,63 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.kky.example">
 
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <application
+        android:name=".ZeusApp"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher2"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".mview.ViewDisActivity" />
+        <activity
+            android:name=".mview.KeyBoardActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".mview.ScrollingActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".mview.SpinnerActivity" />
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name">
+            android:label="@string/title_activity_main2">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".mview.ViewDisActivity" />
+        <activity android:name=".mevent.webview.MyWebViewActivity" />
+        <activity android:name=".mui.UiActivity" />
+        <activity android:name=".mui.PopwindowActivity" />
+        <activity android:name=".mui.CoordinateActivity" />
+        <!-- <activity android:name=".mui.Menu" /> -->
+        <activity android:name=".mevent.FingerPrintActivity" />
+        <activity
+            android:name=".mui.LeftMenuActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".mview.BottomSheetActivity" />
+        <activity android:name=".mview.RecyclerViewActivity" />
+        <activity android:name=".mevent.dbroom.RoomActivity" />
+        <activity android:name=".mevent.dbroom.RoomActivity2" />
+        <activity android:name=".mevent.annotation.AnnotationTestActivity" />
+        <activity android:name=".mevent.d2.D2Simple1Activity" />
+        <activity android:name=".mevent.retrofit.NetWorkActivity" />
+        <activity android:name=".mevent.ContactActivity" />
+        <activity android:name=".mevent.gmap.GMapActivity"/>
+        <activity android:name=".meffect.wheel.WheelViewActivity"/>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDqRD251QJ6zVHSIhMkkpxlxNUEvDTrJRs" />
     </application>
 
 </manifest>

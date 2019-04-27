@@ -7,7 +7,7 @@ package kky.com.exam
  * @change time
  * @class describe
  */
-class MainClass{
+
     fun main(args:Array<String>){
         //实例化一个类
         val yaoming=Shanghair(true,"sh")
@@ -20,4 +20,3 @@ class MainClass{
         guojinming.cook()
     }
 
-}

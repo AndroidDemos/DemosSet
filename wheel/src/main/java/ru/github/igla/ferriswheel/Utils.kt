@@ -1,0 +1,44 @@
+package ru.github.igla.ferriswheel
+
+import android.content.Context
+import android.graphics.Paint
+import android.os.Build
+
+/*
+* @author Zeus
+* create at 2019/4/8 10:58
+* modify at 2019/4/8 10:58
+* modify because 
+* description: TO FIT
+*/
+internal fun Context.dp(dp: Float): Double = dpF(dp).toDouble()
+internal fun Context.dpF(dp: Float): Float = dp * resources.displayMetrics.density
+
+internal fun <T> lazyNonSafe(initializer: () -> T): Lazy<T> = lazy(LazyThreadSafetyMode.NONE, initializer)
+
+internal fun smoothPaint(color: Int): Paint =
+        Paint(Paint.ANTI_ALIAS_FLAG).apply {
+            this.color = color
+        }
+
+/***
+ * https://discuss.kotlinlang.org/t/performant-and-elegant-iterator-over-custom-collection/2962/6
+ */
+internal inline fun <E> List<E>.forEachNoIterator(block: (E) -> Unit) {
+    var index = 0
+    val size = size
+    while (index < size) {
+        block(get(index))
+        index++
+    }
+}
+
+
+@Suppress("DEPRECATION")
+internal fun Context.getColorRes(id: Int): Int {
+    return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+        getColor(id)
+    } else {
+        resources.getColor(id)
+    }
+}
