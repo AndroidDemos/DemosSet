@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".mview.ScrollingActivity"
+    tools:showIn="@layout/activity_scrolling">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.kky.example.widget.canvas.CheckView
+            android:id="@+id/v_check"
+            android:layout_width="300dp"
+            android:layout_height="300dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/bt_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="check" />
+
+            <Button
+                android:id="@+id/bt_uncheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="uncheck" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="饼状图" />
+
+        <com.kky.example.widget.PieView
+            android:id="@+id/v_pie"
+            android:layout_width="200dp"
+            android:layout_height="200dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="画布缩放" />
+
+        <com.kky.example.widget.canvas.CanvasView1
+            android:id="@+id/cv1"
+            android:layout_width="match_parent"
+            android:layout_height="310dp"
+            android:background="@color/color_87d4a7" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="画布缩放并移动中心缩放点" />
+
+        <com.kky.example.widget.canvas.CanvasView2
+            android:id="@+id/cv2"
+            android:layout_width="match_parent"
+            android:layout_height="310dp"
+            android:background="@color/color_87d4a7" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="画布缩放并移动中心缩放点并翻转" />
+
+        <com.kky.example.widget.canvas.CanvasView3
+            android:id="@+id/cv3"
+            android:layout_width="match_parent"
+            android:layout_height="310dp"
+            android:background="@color/color_87d4a7" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="圆环" />
+
+        <com.kky.example.widget.canvas.CircleView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="@color/color_87d4a7" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:text="@string/large_text" />
+    </LinearLayout>
+
+
+</androidx.core.widget.NestedScrollView>

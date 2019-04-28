@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    tools:context=".meffect.wheel.WheelViewActivity"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:fitsSystemWindows="true"
+        android:layout_height="match_parent">
+    <ru.github.igla.ferriswheel.FerrisWheelView
+        android:layout_width="match_parent"
+        android:id="@+id/ferrisWheelView"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        app:fwv_baseStrokeColor="#666666"
+        app:fwv_cabinsNumber="8"
+        app:fwv_isClockwise="true"
+        app:fwv_rotateSpeed="6"
+        app:fwv_startAngle="10"
+        app:fwv_wheelStrokeColor="#7fbfe9"
+        android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/tvAction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="200dp"
+            android:text="Open SampleJava Activity"
+            android:textSize="16sp"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <include layout="@layout/bottomsheet_settings_attributes"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
