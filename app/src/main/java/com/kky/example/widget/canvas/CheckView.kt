@@ -184,6 +184,7 @@ class CheckView : View {
     fun setAnimDuration(animDuration: Int) {
         if (animDuration <= 0)
             return
+        var m:Matrix
         this.animDuration = animDuration
     }
 
