@@ -9,8 +9,8 @@ import javax.inject.Inject;
  * modify because
  * description: 肉
  */
-public class Meat {
-    @Inject
-    public Meat() {
-    }
-}
+//public class Meat {
+//    @Inject
+//    public Meat() {
+//    }
+//}

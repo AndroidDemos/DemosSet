@@ -6,7 +6,7 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.kky.example.mevent.d2.A;
-import com.kky.example.mevent.d2.DaggerMainComponent;
+//import com.kky.example.mevent.d2.DaggerMainComponent;
 
 import org.jetbrains.annotations.Nullable;
 

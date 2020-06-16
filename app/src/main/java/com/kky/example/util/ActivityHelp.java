@@ -21,6 +21,8 @@ import com.kky.example.mview.BottomSheetActivity;
 import com.kky.example.mview.KeyBoardActivity;
 import com.kky.example.mview.RecyclerViewActivity;
 import com.kky.example.mview.ScrollingActivity;
+import com.kky.example.mview.SoftInputActivity;
+import com.kky.example.mview.SoftInputActivity2;
 import com.kky.example.mview.SpinnerActivity;
 import com.kky.example.mview.ViewDisActivity;
 
@@ -66,12 +68,6 @@ public class ActivityHelp {
         myData.add(map1);
 
         map1 = new HashMap<>();
-        map1.put("title", "KeyBoardActivity");
-        intent = new Intent(activity, KeyBoardActivity.class);
-        map1.put("intent", intent);
-        myData.add(map1);
-
-        map1 = new HashMap<>();
         map1.put("title", "PopwindowActivity");
         intent = new Intent(activity, PopwindowActivity.class);
         map1.put("intent", intent);
@@ -91,37 +87,22 @@ public class ActivityHelp {
     }
 
     private static void setViewList(Activity activity, List<Map<String, Object>> myData) {
+        addActivity(activity, KeyBoardActivity.class, myData);
+        addActivity(activity, SpinnerActivity.class, myData);
+        addActivity(activity, ScrollingActivity.class, myData);
+        addActivity(activity, BottomSheetActivity.class, myData);
+        addActivity(activity, RecyclerViewActivity.class, myData);
+        addActivity(activity, SoftInputActivity.class, myData);
+        addActivity(activity, SoftInputActivity2.class, myData);
+    }
+
+    private static <T> void addActivity(Activity activity, Class<T> targetActivity, List<Map<String, Object>> myData) {
         Map<String, Object> map1;
         Intent intent;
-
         map1 = new HashMap<>();
-        map1.put("title", "KeyBoardActivity");
-        intent = new Intent(activity, KeyBoardActivity.class);
-        map1.put("intent", intent);
-        myData.add(map1);
-
-        map1 = new HashMap<>();
-        map1.put("title", "SpinnerActivity");
-        intent = new Intent(activity, SpinnerActivity.class);
-        map1.put("intent", intent);
-        myData.add(map1);
-
-        map1 = new HashMap<>();
-        map1.put("title", "ScrollingActivity");
-        intent = new Intent(activity, ScrollingActivity.class);
-        map1.put("intent", intent);
-        myData.add(map1);
-
-
-        map1 = new HashMap<>();
-        map1.put("title", "BottomSheetActivity");
-        intent = new Intent(activity, BottomSheetActivity.class);
-        map1.put("intent", intent);
-        myData.add(map1);
-
-        map1 = new HashMap<>();
-        map1.put("title", "RecyclerViewActivity");
-        intent = new Intent(activity, RecyclerViewActivity.class);
+        String simpleName = targetActivity.getSimpleName();
+        map1.put("title", simpleName);
+        intent = new Intent(activity, targetActivity);
         map1.put("intent", intent);
         myData.add(map1);
     }
