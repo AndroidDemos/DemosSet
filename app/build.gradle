@@ -3,6 +3,17 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 28
+
+    signingConfigs {
+        zeusSign {
+            keyAlias 'zeus'
+            keyPassword 'zeus105'
+            storeFile file('../zeus_key.jks')
+            storePassword 'lucifer105'
+        }
+    }
+
+
     defaultConfig {
         applicationId "com.kky.example"
         minSdkVersion 23
@@ -11,11 +22,38 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
+        signingConfig signingConfigs.zeusSign
+        manifestPlaceholders = [
+                ZEUS_URL :"ZEUS_URL_DEV22",
+                PENNY:"额外的数据，不会被覆盖"
+        ]
     }
     buildTypes {
+        dev {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            manifestPlaceholders = [
+                    ZEUS_URL :"ZEUS_URL_DEV"
+            ]
+            matchingFallbacks = ['pre', 'debug', 'release']
+        }
+        preview {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.zeusSign
+            manifestPlaceholders = [
+                    ZEUS_URL :"ZEUS_URL_PRE"
+            ]
+            matchingFallbacks = ['pre', 'debug', 'release']
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.zeusSign
+            manifestPlaceholders = [
+                    ZEUS_URL :"ZEUS_URL_RELEASE"
+            ]
+            matchingFallbacks = ['pre', 'debug', 'release']
         }
     }
     compileOptions {
@@ -35,7 +73,7 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'androidx.appcompat:appcompat:1.1.0-alpha01'
+    implementation 'androidx.appcompat:appcompat:1.3.0-alpha01'
     implementation 'com.google.android.material:material:1.1.0-alpha02'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha3'
     implementation 'androidx.vectordrawable:vectordrawable:1.1.0-alpha01'

@@ -141,6 +141,7 @@
             </RadioGroup>
 
             <TextView
+                android:id="@+id/tv1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -152,6 +153,7 @@
                 android:textSize="16sp" />
 
             <RelativeLayout
+                android:id="@+id/rl1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -193,6 +195,7 @@
                 android:textColor="#1122aa" />
 
             <RelativeLayout
+                android:id="@+id/rl2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="30dp">

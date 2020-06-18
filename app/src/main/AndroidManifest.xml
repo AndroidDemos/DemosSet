@@ -52,19 +52,25 @@
         <activity android:name=".mview.SoftInputActivity" />
         <activity
             android:name=".mview.SoftInputActivity2"
-            android:theme="@style/FullTheme" />
+            android:theme="@style/FullScreen" />
         <activity android:name=".mevent.dbroom.RoomActivity" />
         <activity android:name=".mevent.dbroom.RoomActivity2" />
         <activity android:name=".mevent.annotation.AnnotationTestActivity" />
         <activity android:name=".mevent.d2.D2Simple1Activity" />
         <activity android:name=".mevent.retrofit.NetWorkActivity" />
         <activity android:name=".mevent.ContactActivity" />
+        <activity android:name=".mevent.ManifestPlaceHolderActivity" />
         <activity android:name=".mevent.gmap.GMapActivity" />
         <activity android:name=".meffect.wheel.WheelViewActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDqRD251QJ6zVHSIhMkkpxlxNUEvDTrJRs" />
+        <!--    name    代码中根据该名去获取-->
+        <meta-data
+            android:name="ZEUS_K"
+            android:value="${ZEUS_URL}"/><!--   value   build.gradle的manifest里面去使用-->
+
     </application>
 
 </manifest>

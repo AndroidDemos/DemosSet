@@ -22,6 +22,7 @@ class SoftInputActivity2 : BaseActivity() {
             override fun onCheckedChanged(group: RadioGroup, checkedId: Int) {
                 when (checkedId) {
                     R.id.rb_1 -> {
+                        //使用 SOFT_INPUT_ADJUST_RESIZE 模式时还可以与 layout的 onSizeChanged 方法结合使用，相应的隐藏某些控件
                         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE or WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN)//压缩可压缩的空间
                     }
                     R.id.rb_2 -> {
@@ -42,19 +43,22 @@ class SoftInputActivity2 : BaseActivity() {
             override fun stateChange(state: Int) {
                 when (state) {
                     ResizeLayout.KEYBORAD_SHOW -> {
-                        tv_desc1.visibility = View.GONE
-                        tv_desc2.visibility = View.GONE
-                        tv_desc3.visibility = View.GONE
+                        tv1.visibility = View.GONE
+                        rl1.visibility = View.GONE
+                        btn.visibility = View.GONE
+                        rl2.visibility = View.GONE
                     }
                     ResizeLayout.KEYBORAD_HIDE -> {
-                        tv_desc1.visibility = View.VISIBLE
-                        tv_desc2.visibility = View.VISIBLE
-                        tv_desc3.visibility = View.VISIBLE
+                        tv1.visibility = View.VISIBLE
+                        rl1.visibility = View.VISIBLE
+                        btn.visibility = View.VISIBLE
+                        rl2.visibility = View.VISIBLE
                     }
                     else -> {
-                        tv_desc1.visibility = View.VISIBLE
-                        tv_desc2.visibility = View.VISIBLE
-                        tv_desc3.visibility = View.VISIBLE
+                        tv1.visibility = View.VISIBLE
+                        rl1.visibility = View.VISIBLE
+                        btn.visibility = View.VISIBLE
+                        rl2.visibility = View.VISIBLE
                     }
                 }
             }

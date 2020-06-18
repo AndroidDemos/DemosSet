@@ -19,6 +19,7 @@ import com.kky.example.mui.PopwindowActivity;
 import com.kky.example.mui.UiActivity;
 import com.kky.example.mview.BottomSheetActivity;
 import com.kky.example.mview.KeyBoardActivity;
+import com.kky.example.mevent.ManifestPlaceHolderActivity;
 import com.kky.example.mview.RecyclerViewActivity;
 import com.kky.example.mview.ScrollingActivity;
 import com.kky.example.mview.SoftInputActivity;
@@ -87,80 +88,28 @@ public class ActivityHelp {
     }
 
     private static void setViewList(Activity activity, List<Map<String, Object>> myData) {
-        addActivity(activity, KeyBoardActivity.class, myData);
-        addActivity(activity, SpinnerActivity.class, myData);
-        addActivity(activity, ScrollingActivity.class, myData);
-        addActivity(activity, BottomSheetActivity.class, myData);
-        addActivity(activity, RecyclerViewActivity.class, myData);
-        addActivity(activity, SoftInputActivity.class, myData);
-        addActivity(activity, SoftInputActivity2.class, myData);
+        IntentHelp.INSTANCE.addActivity(activity, KeyBoardActivity.class, myData);
+        IntentHelp.INSTANCE.addActivity(activity, SpinnerActivity.class, myData);
+        IntentHelp.INSTANCE.addActivity(activity, ScrollingActivity.class, myData);
+        IntentHelp.INSTANCE.addActivity(activity, BottomSheetActivity.class, myData);
+        IntentHelp.INSTANCE.addActivity(activity, RecyclerViewActivity.class, myData);
+        IntentHelp.INSTANCE.addActivity(activity, SoftInputActivity.class, myData);
+        IntentHelp.INSTANCE.addActivity(activity, SoftInputActivity2.class, myData);
     }
 
-    private static <T> void addActivity(Activity activity, Class<T> targetActivity, List<Map<String, Object>> myData) {
-        Map<String, Object> map1;
-        Intent intent;
-        map1 = new HashMap<>();
-        String simpleName = targetActivity.getSimpleName();
-        map1.put("title", simpleName);
-        intent = new Intent(activity, targetActivity);
-        map1.put("intent", intent);
-        myData.add(map1);
-    }
 
     private static void setEventList(Activity activity, List<Map<String, Object>> myData) {
-        Map<String, Object> map1 = new HashMap<String, Object>();
-        map1.put("title", "FingerPrintActivity");
-        Intent intent = new Intent(activity, FingerPrintActivity.class);
-        map1.put("intent", intent);
-        myData.add(map1);
-
-        map1 = new HashMap<>();
-        map1.put("title", "RoomActivity");
-        intent = new Intent(activity, RoomActivity.class);
-        map1.put("intent", intent);
-        myData.add(map1);
-
-        map1 = new HashMap<>();
-        map1.put("title", "RoomActivity2");
-        intent = new Intent(activity, RoomActivity2.class);
-        map1.put("intent", intent);
-        myData.add(map1);
-
-        map1 = new HashMap<>();
-        map1.put("title", "MyWebView");
-        intent = new Intent(activity, MyWebViewActivity.class);
-        map1.put("intent", intent);
-        myData.add(map1);
-
-        map1 = new HashMap<>();
-        map1.put("title", "SimpleAnnotation");
-        intent = new Intent(activity, AnnotationTestActivity.class);
-        map1.put("intent", intent);
-        myData.add(map1);
-
-        map1 = new HashMap<>();
-        map1.put("title", "简单使用Dagger 2");
-        intent = new Intent(activity, D2Simple1Activity.class);
-        map1.put("intent", intent);
-        myData.add(map1);
-
-        map1 = new HashMap<>();
-        map1.put("title", "封装网络请求测试");
-        intent = new Intent(activity, NetWorkActivity.class);
-        map1.put("intent", intent);
-        myData.add(map1);
-
-        map1 = new HashMap<>();
-        map1.put("title", "查询通讯录");
-        intent = new Intent(activity, ContactActivity.class);
-        map1.put("intent", intent);
-        myData.add(map1);
-
-        map1 = new HashMap<>();
-        map1.put("title", "GMap使用");
-        intent = new Intent(activity, GMapActivity.class);
-        map1.put("intent", intent);
-        myData.add(map1);
+        IntentHelp.INSTANCE.addActivity(activity, FingerPrintActivity.class, myData);
+        IntentHelp.INSTANCE.addActivity(activity, RoomActivity.class, myData);
+        IntentHelp.INSTANCE.addActivity(activity, RoomActivity2.class, myData);
+        IntentHelp.INSTANCE.addActivity(activity, MyWebViewActivity.class, myData);
+        IntentHelp.INSTANCE.addActivity(activity, AnnotationTestActivity.class, myData);
+        IntentHelp.INSTANCE.addWithTitle(activity, "简单使用Dagger 2", D2Simple1Activity.class, myData);
+        IntentHelp.INSTANCE.addWithTitle(activity, "封装网络请求测试 2", NetWorkActivity.class, myData);
+        IntentHelp.INSTANCE.addWithTitle(activity, "查询通讯录 2", ContactActivity.class, myData);
+        IntentHelp.INSTANCE.addWithTitle(activity, "GMap使用", GMapActivity.class, myData);
+        IntentHelp.INSTANCE.addWithTitle(activity, "Manifest placeHolder的传参", ManifestPlaceHolderActivity.class,
+                myData);
     }
 
     private static void setEffect(Activity activity, List<Map<String, Object>> myData) {
