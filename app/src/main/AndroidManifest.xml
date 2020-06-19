@@ -20,7 +20,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme.NoActionBar">
         <activity android:name=".mview.ViewDisActivity" />
         <activity
             android:name=".mview.KeyBoardActivity"
@@ -39,7 +39,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".mevent.webview.MyWebViewActivity" />
-        <activity android:name=".mui.UiActivity" />
         <activity android:name=".mui.PopwindowActivity" />
         <activity android:name=".mui.CoordinateActivity" />
         <!-- <activity android:name=".mui.Menu" /> -->
@@ -49,6 +48,7 @@
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".mview.BottomSheetActivity" />
         <activity android:name=".mview.RecyclerViewActivity" />
+        <activity android:name=".mview.StickSectionActivity" />
         <activity android:name=".mview.SoftInputActivity" />
         <activity
             android:name=".mview.SoftInputActivity2"

@@ -16,7 +16,6 @@ import com.kky.example.mevent.webview.MyWebViewActivity;
 import com.kky.example.mui.CoordinateActivity;
 import com.kky.example.mui.LeftMenuActivity;
 import com.kky.example.mui.PopwindowActivity;
-import com.kky.example.mui.UiActivity;
 import com.kky.example.mview.BottomSheetActivity;
 import com.kky.example.mview.KeyBoardActivity;
 import com.kky.example.mevent.ManifestPlaceHolderActivity;
@@ -25,6 +24,7 @@ import com.kky.example.mview.ScrollingActivity;
 import com.kky.example.mview.SoftInputActivity;
 import com.kky.example.mview.SoftInputActivity2;
 import com.kky.example.mview.SpinnerActivity;
+import com.kky.example.mview.StickSectionActivity;
 import com.kky.example.mview.ViewDisActivity;
 
 import java.util.ArrayList;
@@ -62,29 +62,9 @@ public class ActivityHelp {
     }
 
     private static void setUiList(Activity activity, List<Map<String, Object>> myData) {
-        Map<String, Object> map1 = new HashMap<String, Object>();
-        map1.put("title", "UiActivity");
-        Intent intent = new Intent(activity, UiActivity.class);
-        map1.put("intent", intent);
-        myData.add(map1);
-
-        map1 = new HashMap<>();
-        map1.put("title", "PopwindowActivity");
-        intent = new Intent(activity, PopwindowActivity.class);
-        map1.put("intent", intent);
-        myData.add(map1);
-
-        map1 = new HashMap<>();
-        map1.put("title", "LeftMenuActivity");
-        intent = new Intent(activity, LeftMenuActivity.class);
-        map1.put("intent", intent);
-        myData.add(map1);
-
-        map1 = new HashMap<>();
-        map1.put("title", "CoordinateActivity");
-        intent = new Intent(activity, CoordinateActivity.class);
-        map1.put("intent", intent);
-        myData.add(map1);
+        IntentHelp.INSTANCE.addActivity(activity, PopwindowActivity.class, myData);
+        IntentHelp.INSTANCE.addActivity(activity, LeftMenuActivity.class, myData);
+        IntentHelp.INSTANCE.addActivity(activity, CoordinateActivity.class, myData);
     }
 
     private static void setViewList(Activity activity, List<Map<String, Object>> myData) {
@@ -93,6 +73,7 @@ public class ActivityHelp {
         IntentHelp.INSTANCE.addActivity(activity, ScrollingActivity.class, myData);
         IntentHelp.INSTANCE.addActivity(activity, BottomSheetActivity.class, myData);
         IntentHelp.INSTANCE.addActivity(activity, RecyclerViewActivity.class, myData);
+        IntentHelp.INSTANCE.addActivity(activity, StickSectionActivity.class, myData);
         IntentHelp.INSTANCE.addActivity(activity, SoftInputActivity.class, myData);
         IntentHelp.INSTANCE.addActivity(activity, SoftInputActivity2.class, myData);
     }

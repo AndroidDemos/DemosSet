@@ -16,36 +16,35 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_dev"
+        android:id="@+id/tv_url"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="dev:"
         app:layout_constraintHorizontal_bias="0.5"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
     <TextView
-        android:id="@+id/tv_preview"
+        android:id="@+id/tv_args1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="12dp"
-        android:text="Preview:"
+        android:text="Args:"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_dev" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_url" />
 
     <TextView
-        android:id="@+id/tv_release"
+        android:id="@+id/tv_args2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="Release:"
+        android:hint="Args2:"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_preview" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_args1" />
 </androidx.constraintlayout.widget.ConstraintLayout>

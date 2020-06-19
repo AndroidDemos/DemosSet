@@ -16,4 +16,7 @@ ext {
             rxandroid            : "2.0.1",
             gms            : "9.4.0"
     ]
+    cfgs2 = [
+            base_url    : '"http://api-preview.**/"',
+    ]
 }
