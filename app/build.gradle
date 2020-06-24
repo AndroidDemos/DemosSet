@@ -32,15 +32,18 @@ android {
         debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.zeusSign
             manifestPlaceholders = [
                     ZEUS_URL: "ZEUS_URL_DEV"
             ]
             matchingFallbacks = ['preview', 'debug', 'release']
 //            buildConfigField 'String', 'BASE_URL', '"http://api-dev.**/"'
             buildConfigField 'String', 'BASE_URL', "${cfgs2.base_url}"
-
+            buildConfigField 'int', 'i_test', "${cfgs2.test_index}"
+            buildConfigField "boolean", "LOG_DEBUG", "false"
         }
         preview {
+            initWith debug
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.zeusSign
@@ -48,9 +51,12 @@ android {
                     ZEUS_URL: "ZEUS_URL_PRE"
             ]
             matchingFallbacks = ['preview', 'debug', 'release']
-            buildConfigField 'String', 'BASE_URL', '${cfgs2.base_url}'
+            buildConfigField 'String', 'BASE_URL', "${cfgs2.base_url}"
+            buildConfigField 'int', 'i_test', "${cfgs2.test_index2}"
+            buildConfigField "boolean", "LOG_DEBUG", "true"
         }
         release {
+            initWith debug
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.zeusSign

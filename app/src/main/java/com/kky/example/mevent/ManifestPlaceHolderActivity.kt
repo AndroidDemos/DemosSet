@@ -21,5 +21,7 @@ class ManifestPlaceHolderActivity : BaseActivity() {
         Log.d("测试", "kimmy=$urlValue")
         val text = tv_args1.text.toString()
         tv_args1.text = text + BuildConfig.BASE_URL
+        tv_args2.text = text + "-" + BuildConfig.i_test
+        tv_args3.text = text + "-" + BuildConfig.LOG_DEBUG
     }
 }

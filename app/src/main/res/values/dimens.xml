@@ -11,4 +11,8 @@
     <dimen name="nav_header_height">176dp</dimen>
     <dimen name="divider_height">1px</dimen>
     <dimen name="dp_32">32dp</dimen>
+    <dimen name="text_size_16sp">16sp</dimen>
+    <dimen name="text_size_16dp">16dp</dimen>
+    <dimen name="text_size_18sp">18sp</dimen>
+    <dimen name="text_size_18dp">18dp</dimen>
 </resources>

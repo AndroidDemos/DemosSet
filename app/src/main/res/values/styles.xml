@@ -31,6 +31,7 @@
         <item name="android:statusBarColor">@android:color/transparent</item>
 
     </style>
+
     <style name="FullScreen" parent="Theme.MaterialComponents.NoActionBar">
         <!-- Customize your theme here. -->
 
@@ -38,6 +39,34 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
+
+    </style>
+
+    <style name="WRAPPER_STYLE">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="MATCH_WITCH_STYLE">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="textNormal" parent="WRAPPER_STYLE">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#22aa33</item>
+    </style>
+
+    <style name="TabStyle">
+        <!--android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"/>-->
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48dp</item>
+    </style>
+
+    <style name="textCenter" parent="@style/TabStyle">
 
     </style>
 

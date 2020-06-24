@@ -1,17 +1,19 @@
-package com.kky.example.widget.decor
+package com.kky.example.widget.decor.sticky
 
 import android.content.Context
 import android.graphics.*
+import android.text.TextUtils
 import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.kky.example.R
 import com.kky.example.mview.sticky.DecorationCallback
 
+
 /**
  * 正常的分割线
  */
-class SectionDecoration : RecyclerView.ItemDecoration {//分割线是通过父控件的背景色实现
+class PinnedSectionDecoration : RecyclerView.ItemDecoration {//分割线是通过父控件的背景色实现
 
     private var callback: DecorationCallback
     private var textPaint: Paint
@@ -23,7 +25,6 @@ class SectionDecoration : RecyclerView.ItemDecoration {//分割线是通过父�
         paint.color = ContextCompat.getColor(context, R.color.colorAccent)
 
         callback = decorationCallback
-
         textPaint = Paint()
         textPaint.typeface = Typeface.DEFAULT_BOLD
         textPaint.isAntiAlias = true
@@ -44,6 +45,40 @@ class SectionDecoration : RecyclerView.ItemDecoration {//分割线是通过父�
             outRect.top = topGap
         } else {
             outRect.top = 0
+        }
+    }
+
+    override fun onDrawOver(c: Canvas, parent: RecyclerView, state: RecyclerView.State) {
+        super.onDrawOver(c, parent, state)
+        val itemCount = state.itemCount
+        val childCount = parent.childCount
+        val left = parent.paddingLeft
+        val right = parent.width - parent.paddingRight
+        val lineHeight = textPaint.textSize + fontMetrics.descent
+
+        var preGroupId: Long
+        var groupId: Long = -1
+
+        for (i in 0 until childCount) {
+            val view = parent.getChildAt(i)
+            val position = parent.getChildAdapterPosition(view)
+            preGroupId = groupId
+            groupId = callback.getGroupId(position)
+
+            if (groupId < 0 || groupId == preGroupId) continue
+            var textLine = callback.getGroupFirstLine(position).toUpperCase()
+            if (TextUtils.isEmpty(textLine)) continue
+
+            var viewBottom = view.bottom
+            var textY = topGap.coerceAtLeast(view.top)
+            if (position + 1 < itemCount) {
+                var nextGroupId = callback.getGroupId(position + 1)
+                if (nextGroupId != groupId && viewBottom < textY) {//组内最后一个view进入了header
+                    textY = viewBottom
+                }
+            }
+            c.drawRect(left.toFloat(), (textY - topGap).toFloat(), right.toFloat(), textY.toFloat(), paint)
+            c.drawText(textLine, left.toFloat(), textY.toFloat(), textPaint)
         }
     }
 

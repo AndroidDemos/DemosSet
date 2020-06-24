@@ -18,5 +18,7 @@ ext {
     ]
     cfgs2 = [
             base_url    : '"http://api-preview.**/"',
+            test_index    : 100,
+            test_index2    : 1100,
     ]
 }

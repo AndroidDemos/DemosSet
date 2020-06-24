@@ -17,6 +17,7 @@ import com.kky.example.mui.CoordinateActivity;
 import com.kky.example.mui.LeftMenuActivity;
 import com.kky.example.mui.PopwindowActivity;
 import com.kky.example.mview.BottomSheetActivity;
+import com.kky.example.mview.DrawableResourceActivity;
 import com.kky.example.mview.KeyBoardActivity;
 import com.kky.example.mevent.ManifestPlaceHolderActivity;
 import com.kky.example.mview.RecyclerViewActivity;
@@ -24,7 +25,8 @@ import com.kky.example.mview.ScrollingActivity;
 import com.kky.example.mview.SoftInputActivity;
 import com.kky.example.mview.SoftInputActivity2;
 import com.kky.example.mview.SpinnerActivity;
-import com.kky.example.mview.StickSectionActivity;
+import com.kky.example.mview.StickySectionActivity;
+import com.kky.example.mview.TextSizeActivity;
 import com.kky.example.mview.ViewDisActivity;
 
 import java.util.ArrayList;
@@ -73,9 +75,11 @@ public class ActivityHelp {
         IntentHelp.INSTANCE.addActivity(activity, ScrollingActivity.class, myData);
         IntentHelp.INSTANCE.addActivity(activity, BottomSheetActivity.class, myData);
         IntentHelp.INSTANCE.addActivity(activity, RecyclerViewActivity.class, myData);
-        IntentHelp.INSTANCE.addActivity(activity, StickSectionActivity.class, myData);
+        IntentHelp.INSTANCE.addActivity(activity, StickySectionActivity.class, myData);
         IntentHelp.INSTANCE.addActivity(activity, SoftInputActivity.class, myData);
         IntentHelp.INSTANCE.addActivity(activity, SoftInputActivity2.class, myData);
+        IntentHelp.INSTANCE.addActivity(activity, DrawableResourceActivity.class, myData);
+        IntentHelp.INSTANCE.addActivity(activity, TextSizeActivity.class, myData);
     }
 
 

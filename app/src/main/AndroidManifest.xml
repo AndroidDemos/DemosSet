@@ -48,8 +48,10 @@
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".mview.BottomSheetActivity" />
         <activity android:name=".mview.RecyclerViewActivity" />
-        <activity android:name=".mview.StickSectionActivity" />
+        <activity android:name=".mview.StickySectionActivity" />
         <activity android:name=".mview.SoftInputActivity" />
+        <activity android:name=".mview.DrawableResourceActivity" />
+        <activity android:name=".mview.TextSizeActivity"/>
         <activity
             android:name=".mview.SoftInputActivity2"
             android:theme="@style/FullScreen" />
