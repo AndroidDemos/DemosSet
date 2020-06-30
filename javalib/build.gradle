@@ -4,6 +4,7 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'io.reactivex.rxjava3:rxjava:3.0.4'
 }
 tasks.withType(JavaCompile){
     options.encoding = "UTF-8"

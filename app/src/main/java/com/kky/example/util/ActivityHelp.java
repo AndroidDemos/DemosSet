@@ -18,6 +18,7 @@ import com.kky.example.mui.LeftMenuActivity;
 import com.kky.example.mui.PopwindowActivity;
 import com.kky.example.mview.BottomSheetActivity;
 import com.kky.example.mview.DrawableResourceActivity;
+import com.kky.example.mview.GridLayoutActivity;
 import com.kky.example.mview.KeyBoardActivity;
 import com.kky.example.mevent.ManifestPlaceHolderActivity;
 import com.kky.example.mview.RecyclerViewActivity;
@@ -80,6 +81,7 @@ public class ActivityHelp {
         IntentHelp.INSTANCE.addActivity(activity, SoftInputActivity2.class, myData);
         IntentHelp.INSTANCE.addActivity(activity, DrawableResourceActivity.class, myData);
         IntentHelp.INSTANCE.addActivity(activity, TextSizeActivity.class, myData);
+        IntentHelp.INSTANCE.addActivity(activity, GridLayoutActivity.class, myData);
     }
 
 

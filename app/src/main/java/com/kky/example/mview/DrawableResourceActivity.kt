@@ -12,7 +12,6 @@ import kotlinx.android.synthetic.main.activity_drawable_resource.*
  * drawable相关用法
  */
 class DrawableResourceActivity : BaseActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_drawable_resource)
@@ -27,7 +26,8 @@ class DrawableResourceActivity : BaseActivity() {
         iv1.setImageLevel(0)
         iv2.setImageLevel(1)
         iv3.setImageLevel(2)// ImgeView.setImageLevel相关用法，不同状态可以用上
-
+        BottomSheetActivity().apply {
+        }
         var drableTransition = getDrawable(R.drawable.g_transition) as TransitionDrawable//Image渐变
         drableTransition.startTransition(1000)
 //        drableTransition.reverseTransition(1000)

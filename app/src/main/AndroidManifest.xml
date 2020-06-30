@@ -51,7 +51,8 @@
         <activity android:name=".mview.StickySectionActivity" />
         <activity android:name=".mview.SoftInputActivity" />
         <activity android:name=".mview.DrawableResourceActivity" />
-        <activity android:name=".mview.TextSizeActivity"/>
+        <activity android:name=".mview.TextSizeActivity" />
+        <activity android:name=".mview.GridLayoutActivity" />
         <activity
             android:name=".mview.SoftInputActivity2"
             android:theme="@style/FullScreen" />
@@ -71,7 +72,7 @@
         <!--    name    代码中根据该名去获取-->
         <meta-data
             android:name="ZEUS_K"
-            android:value="${ZEUS_URL}"/><!--   value   build.gradle的manifest里面去使用-->
+            android:value="${ZEUS_URL}" /><!--   value   build.gradle的manifest里面去使用-->
 
     </application>
 
