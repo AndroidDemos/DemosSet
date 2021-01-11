@@ -23,7 +23,7 @@
         android:theme="@style/AppTheme.NoActionBar">
         <activity android:name=".mview.ViewDisActivity" />
         <activity
-            android:name=".mview.KeyBoardActivity"
+            android:name=".mview.InputManagerActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".mview.ScrollingActivity"
@@ -41,6 +41,12 @@
         <activity android:name=".mevent.webview.MyWebViewActivity" />
         <activity android:name=".mui.PopwindowActivity" />
         <activity android:name=".mui.CoordinateActivity" />
+        <activity android:name=".mui.CoordinateActivity2"  android:theme="@style/AppTheme"/>
+        <activity android:name=".mui.BasicActivity" />
+        <activity android:name=".mui.IconTextViewActivity" />
+        <activity
+            android:name=".mui.FullScreenActivity"
+            android:theme="@style/NoTitleTranslucentTheme" />
         <!-- <activity android:name=".mui.Menu" /> -->
         <activity android:name=".mevent.FingerPrintActivity" />
         <activity
@@ -52,7 +58,36 @@
         <activity android:name=".mview.SoftInputActivity" />
         <activity android:name=".mview.DrawableResourceActivity" />
         <activity android:name=".mview.TextSizeActivity" />
-        <activity android:name=".mview.GridLayoutActivity" />
+        <activity android:name=".mview.GridLayoutActivity2" />
+        <activity android:name=".mview.SchemeReceiverActivity">
+            <intent-filter>
+                <!--action.VIEW和category.DEFAULT必须设置-->
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <!--如果需要浏览器支持打开，则category.BROWSABLE-->
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="redbag"
+                    android:scheme="juancashs" />
+                <!--                <data-->
+                <!--                    android:host="test"-->
+                <!--                    android:scheme="openapp" />-->
+
+            </intent-filter>
+            <intent-filter>
+                <!--action.VIEW和category.DEFAULT必须设置-->
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <!--如果需要浏览器支持打开，则category.BROWSABLE-->
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="test"
+                    android:scheme="openapp" />
+
+            </intent-filter>
+
+        </activity>
+        <activity android:name=".mview.KeyBoardActivity" />
         <activity
             android:name=".mview.SoftInputActivity2"
             android:theme="@style/FullScreen" />

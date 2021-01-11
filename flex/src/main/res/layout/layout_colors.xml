@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:flexDirection="row"
+        app:flexWrap="wrap"
+        app:justifyContent="space_between">
+
+        <TextView
+            android:id="@+id/text1"
+            style="@style/ItemStyle"
+            android:layout_width="72dp"
+            android:layout_height="wrap_content"
+            android:text="1" />
+
+        <TextView
+            android:id="@+id/text2"
+            style="@style/ItemStyle"
+            android:layout_width="72dp"
+            android:layout_height="wrap_content"
+            android:text="2" />
+
+        <TextView
+            android:id="@+id/text3"
+            style="@style/ItemStyle"
+            android:layout_width="72dp"
+            android:layout_height="wrap_content"
+            android:text="1" />
+
+        <TextView
+            android:id="@+id/text4"
+            style="@style/ItemStyle"
+            android:layout_width="72dp"
+            android:layout_height="wrap_content"
+            android:text="2" />
+
+        <TextView
+            android:id="@+id/text5"
+            style="@style/ItemStyle"
+            android:layout_width="72dp"
+            android:layout_height="wrap_content"
+            android:text="1" />
+
+        <TextView
+            android:id="@+id/text6"
+            style="@style/ItemStyle"
+            android:layout_width="72dp"
+            android:layout_height="wrap_content"
+            android:text="2" />
+
+        <TextView
+            android:id="@+id/text7"
+            style="@style/ItemStyle"
+            android:layout_width="72dp"
+            android:layout_height="wrap_content"
+            android:text="2" />
+
+    </com.google.android.flexbox.FlexboxLayout>
+
+    <com.eus.flex.TitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:title_bg_color="@color/colorAccent"
+        app:title_txt_color="@color/colorWhite"
+        app:tt_name="tt_name" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="42dp"
+        android:layout_marginRight="42dp"
+        android:breakStrategy="simple"
+        android:text="到账时间几分钟内（转账时间:00:00-22:30,GMT+8）"
+        android:textSize="14sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="42dp"
+        android:layout_marginRight="42dp"
+        android:breakStrategy="high_quality"
+        android:text="到账时间几分钟内（转账时间:00:00-22:30,GMT+8）"
+        android:textSize="14sp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="42dp"
+        android:layout_marginRight="42dp"
+        android:breakStrategy="balanced"
+        android:text="到账时间几分钟内（转账时间:00:00-22:30,GMT+8）"
+        android:textSize="14sp" />
+    <com.eus.flex.JustifyTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="42dp"
+        android:layout_marginRight="42dp"
+        android:breakStrategy="balanced"
+        android:text="到账时间几分钟内（转账时间:00:00-22:30,GMT+8）"
+        android:textSize="14sp" />
+</LinearLayout>

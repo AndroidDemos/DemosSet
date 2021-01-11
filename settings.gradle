@@ -1,1 +1,4 @@
+include ':appcolorconfig'
+include ':mvvmapp'
+include ':flex'
 include ':app', ':javalib', ':kotlinset', ':wheel'

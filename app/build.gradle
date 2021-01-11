@@ -21,6 +21,8 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+
         vectorDrawables.useSupportLibrary = true
         signingConfig signingConfigs.zeusSign
         manifestPlaceholders = [
@@ -78,10 +80,28 @@ android {
         abortOnError false
     }
 
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+
     buildToolsVersion '28.0.3'
 }
 
 dependencies {
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test:core:1.2.0-alpha03'
+
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1-alpha03'
+    androidTestImplementation 'androidx.test:runner:1.2.0-alpha03'
+    androidTestImplementation 'androidx.test:rules:1.2.0-alpha03'
+
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0-alpha03'//界面测试
+    androidTestImplementation 'androidx.test.espresso:espresso-intents:3.2.0-alpha03'
+    androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.2.0-alpha03'
+
+
+    implementation 'androidx.core:core-ktx:1.3.0'
+
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'androidx.appcompat:appcompat:1.3.0-alpha01'
     implementation 'com.google.android.material:material:1.1.0-alpha02'
@@ -89,9 +109,6 @@ dependencies {
     implementation 'androidx.vectordrawable:vectordrawable:1.1.0-alpha01'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.1.0-alpha01'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.orhanobut:logger:2.2.0'
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'

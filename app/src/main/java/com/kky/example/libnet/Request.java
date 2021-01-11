@@ -7,6 +7,7 @@ import java.util.List;
 
 import io.reactivex.Observable;
 import retrofit2.http.Body;
+import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
 
@@ -19,10 +20,11 @@ import retrofit2.http.Query;
  */
 public interface Request {
     //填上需要访问的服务器地址
-    public static String HOST = "http://116.50.166.90:16001/v1/";
+    public static String HOST = "http://api.juanwallet.net/";
 
 
-    @POST("user/loginOrRegister")
+    @POST("v1/user/loginOrRegister")
+    @Headers({"Content-Type: application/json;charset=UTF-8"})
     Observable<Response<LoginOrRegisterData>> getList(@Body LoginOrRegisterBean body);
 
 }

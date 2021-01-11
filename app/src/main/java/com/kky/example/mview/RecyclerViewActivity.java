@@ -45,7 +45,7 @@ public class RecyclerViewActivity extends BaseActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("测试Recycler滑动");
         RadioGroup group = findViewById(R.id.rg_type);
-        PaddingItemDerocation derocation1 = new PaddingItemDerocation(this);
+        PaddingItemDerocation decoration1 = new PaddingItemDerocation(this);
         SimpleDividerDecoration decoration2 = new SimpleDividerDecoration(this);
         LeftAndRightTagDecoration decoration3 = new LeftAndRightTagDecoration(this);
 
@@ -57,7 +57,7 @@ public class RecyclerViewActivity extends BaseActivity {
                         if (recycler.getItemDecorationCount() > 1) {
                             recycler.removeItemDecorationAt(0);
                         }
-                        recycler.addItemDecoration(derocation1);
+                        recycler.addItemDecoration(decoration1);
                         break;
                     case R.id.rb_2:
                         if (recycler.getItemDecorationCount() > 1) {
@@ -79,7 +79,7 @@ public class RecyclerViewActivity extends BaseActivity {
         recycler = findViewById(R.id.rv_test);
         LinearLayoutManager manager = new LinearLayoutManager(this);
         recycler.setLayoutManager(manager);
-        recycler.addItemDecoration(decoration2);
+        recycler.addItemDecoration(decoration1);
         for (int i = 0; i < 20; i++) {
             ScrollBean bean = new ScrollBean();
             bean.time = "position" + i;

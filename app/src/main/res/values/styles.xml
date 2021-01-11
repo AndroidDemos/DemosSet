@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -70,5 +70,15 @@
 
     </style>
 
+    <style name="NoTitleTranslucentTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowFrame">@null</item>                <!--Dialog的windowFrame框为无-->
+        <item name="android:windowIsFloating">true
+        </item>            <!--是否浮现在activity之上 解决 布局依然不能填充满整个手机屏幕的宽度，会产生20dp左右的空白-->
+        <item name="android:windowContentOverlay">@null</item>       <!--是否有覆盖-->
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
 
 </resources>

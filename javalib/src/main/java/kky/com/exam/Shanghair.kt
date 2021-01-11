@@ -7,7 +7,7 @@ package kky.com.exam
  * @change time
  * @class describe
  */
-class Shanghair(sex: Boolean, region: String) : Chinese(sex, region) {
+open class Shanghair(sex: Boolean, region: String) : Chinese(sex, region) {
     var dialet = "上海话"
     override var skin = "上海黄"
 }

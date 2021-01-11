@@ -6,6 +6,7 @@ import android.content.Intent;
 import com.kky.example.meffect.wheel.WheelViewActivity;
 import com.kky.example.mevent.ContactActivity;
 import com.kky.example.mevent.FingerPrintActivity;
+import com.kky.example.mevent.ManifestPlaceHolderActivity;
 import com.kky.example.mevent.annotation.AnnotationTestActivity;
 import com.kky.example.mevent.d2.D2Simple1Activity;
 import com.kky.example.mevent.dbroom.RoomActivity;
@@ -13,14 +14,18 @@ import com.kky.example.mevent.dbroom.RoomActivity2;
 import com.kky.example.mevent.gmap.GMapActivity;
 import com.kky.example.mevent.retrofit.NetWorkActivity;
 import com.kky.example.mevent.webview.MyWebViewActivity;
+import com.kky.example.mui.BasicActivity;
 import com.kky.example.mui.CoordinateActivity;
+import com.kky.example.mui.CoordinateActivity2;
+import com.kky.example.mui.FullScreenActivity;
+import com.kky.example.mui.IconTextViewActivity;
 import com.kky.example.mui.LeftMenuActivity;
 import com.kky.example.mui.PopwindowActivity;
 import com.kky.example.mview.BottomSheetActivity;
 import com.kky.example.mview.DrawableResourceActivity;
-import com.kky.example.mview.GridLayoutActivity;
+import com.kky.example.mview.GridLayoutActivity2;
+import com.kky.example.mview.InputManagerActivity;
 import com.kky.example.mview.KeyBoardActivity;
-import com.kky.example.mevent.ManifestPlaceHolderActivity;
 import com.kky.example.mview.RecyclerViewActivity;
 import com.kky.example.mview.ScrollingActivity;
 import com.kky.example.mview.SoftInputActivity;
@@ -29,6 +34,7 @@ import com.kky.example.mview.SpinnerActivity;
 import com.kky.example.mview.StickySectionActivity;
 import com.kky.example.mview.TextSizeActivity;
 import com.kky.example.mview.ViewDisActivity;
+import com.kky.example.widget.IconTextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -68,10 +74,14 @@ public class ActivityHelp {
         IntentHelp.INSTANCE.addActivity(activity, PopwindowActivity.class, myData);
         IntentHelp.INSTANCE.addActivity(activity, LeftMenuActivity.class, myData);
         IntentHelp.INSTANCE.addActivity(activity, CoordinateActivity.class, myData);
+        IntentHelp.INSTANCE.addWithTitle(activity, "CoordinateActivity2空白", CoordinateActivity2.class, myData);
+        IntentHelp.INSTANCE.addActivity(activity, BasicActivity.class, myData);
+        IntentHelp.INSTANCE.addActivity(activity, FullScreenActivity.class, myData);
+        IntentHelp.INSTANCE.addWithTitle(activity, "自定义view dp获取", IconTextViewActivity.class, myData);
     }
 
     private static void setViewList(Activity activity, List<Map<String, Object>> myData) {
-        IntentHelp.INSTANCE.addActivity(activity, KeyBoardActivity.class, myData);
+        IntentHelp.INSTANCE.addActivity(activity, InputManagerActivity.class, myData);
         IntentHelp.INSTANCE.addActivity(activity, SpinnerActivity.class, myData);
         IntentHelp.INSTANCE.addActivity(activity, ScrollingActivity.class, myData);
         IntentHelp.INSTANCE.addActivity(activity, BottomSheetActivity.class, myData);
@@ -81,7 +91,8 @@ public class ActivityHelp {
         IntentHelp.INSTANCE.addActivity(activity, SoftInputActivity2.class, myData);
         IntentHelp.INSTANCE.addActivity(activity, DrawableResourceActivity.class, myData);
         IntentHelp.INSTANCE.addActivity(activity, TextSizeActivity.class, myData);
-        IntentHelp.INSTANCE.addActivity(activity, GridLayoutActivity.class, myData);
+        IntentHelp.INSTANCE.addActivity(activity, GridLayoutActivity2.class, myData);
+        IntentHelp.INSTANCE.addActivity(activity, KeyBoardActivity.class, myData);
     }
 
 

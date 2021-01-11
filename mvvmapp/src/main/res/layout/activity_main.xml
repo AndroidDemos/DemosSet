@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="us"
+            type="com.example.mvvmapp.bean.User" />
+
+        <variable
+            name="mainVModel"
+            type="com.example.mvvmapp.app.main.vm.MainViewModelImpl" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".app.main.MainActivity">
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="90dp"
+            android:text="@{us.name}"
+            app:layout_constraintStart_toStartOf="@+id/bt_change"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="26dp"
+            android:text="@{us.lastName}"
+            app:layout_constraintStart_toStartOf="@+id/bt_change"
+            app:layout_constraintTop_toBottomOf="@+id/tv1" />
+<!--        android:onClick="@{mainVModel::reGetData}"-->
+
+        <Button
+            android:id="@+id/bt_change"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:onClick="onGetData"
+            android:text="Button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

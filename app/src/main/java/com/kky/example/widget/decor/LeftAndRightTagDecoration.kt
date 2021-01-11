@@ -3,6 +3,7 @@ package com.kky.example.widget.decor
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Paint
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.kky.example.R
 
@@ -17,9 +18,9 @@ class LeftAndRightTagDecoration : RecyclerView.ItemDecoration {//分割线是通
     private var rightPaint: Paint
 
     constructor(context: Context) {
-        leftPaint.color = context.getColor(R.color.colorAccent)
+        leftPaint.color = ContextCompat.getColor(context, R.color.colorAccent)
         rightPaint = Paint()
-        rightPaint.color = context.getColor(R.color.colorPrimary)
+        rightPaint.color = ContextCompat.getColor(context, R.color.colorPrimary)
         tagWidth = context.resources.getDimensionPixelSize(R.dimen.activity_horizontal_margin)
     }
 

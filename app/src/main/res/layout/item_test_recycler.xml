@@ -6,41 +6,48 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="@android:color/white"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
+        android:background="@color/white">
 
         <TextView
             android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:paddingLeft="8dp"
-            android:textColor="@color/colorAccent"
             android:paddingRight="8dp"
-            android:text="原油1809" />
+            android:text="原油1809"
+            android:textColor="@color/colorAccent" />
 
         <TextView
             android:id="@+id/tv_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorAccent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
-            android:text="12:45:12" />
+            android:text="12:45:12"
+            android:textColor="@color/colorAccent" />
 
-    </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/red" />
+
+    </RelativeLayout>
 
     <LinearLayout
         android:id="@+id/ll_hide"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:background="@android:color/holo_green_light"
-        android:visibility="gone" >
+        android:orientation="horizontal"
+        android:visibility="gone">
 
         <Button
             android:id="@+id/bt_name"
@@ -61,4 +68,4 @@
     </LinearLayout>
 
 
-    </LinearLayout>
+</LinearLayout>

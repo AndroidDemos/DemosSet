@@ -37,10 +37,13 @@ public class NetWorkActivity extends BaseActivity {
         mDisposable = new CompositeDisposable();
 
         LoginOrRegisterBean bean = new LoginOrRegisterBean();
-        bean.setCode("3232");
-        bean.setCode("3232");
-        bean.setCode("3232");
-        bean.setCode("3232");
+        //{"code":"787978","deviceId":"ab6d3006286ee432","deviceName":"aosp","mobile":"639444494444","mobilePrefix":"63","version":"20200721"}
+        bean.setCode("789789");
+        bean.setDeviceId("ab6d3006286ee432");
+        bean.setDeviceName("aosp");
+        bean.setMobile("639444494444");
+        bean.setMobilePrefix("63");
+        bean.setVersion("20200721");
         Observable<Response<LoginOrRegisterData>> observable = NetWorkManager.getRequest()
                 .getList(bean);
 

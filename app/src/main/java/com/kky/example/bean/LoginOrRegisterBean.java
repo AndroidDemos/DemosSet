@@ -19,7 +19,9 @@ public class LoginOrRegisterBean {
     private String deviceId;
     private String deviceName;
     private String mobile;
-
+    private String regSource;
+    private String mobilePrefix;
+    private String version;
     public String getCode() {
         return code;
     }
@@ -52,4 +54,27 @@ public class LoginOrRegisterBean {
         this.mobile = mobile;
     }
 
+    public String getRegSource() {
+        return regSource;
+    }
+
+    public void setRegSource(String regSource) {
+        this.regSource = regSource;
+    }
+
+    public String getMobilePrefix() {
+        return mobilePrefix;
+    }
+
+    public void setMobilePrefix(String mobilePrefix) {
+        this.mobilePrefix = mobilePrefix;
+    }
+
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
 }
