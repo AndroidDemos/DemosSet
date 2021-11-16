@@ -8,7 +8,6 @@ import com.kky.example.mevent.ContactActivity;
 import com.kky.example.mevent.FingerPrintActivity;
 import com.kky.example.mevent.ManifestPlaceHolderActivity;
 import com.kky.example.mevent.annotation.AnnotationTestActivity;
-import com.kky.example.mevent.d2.D2Simple1Activity;
 import com.kky.example.mevent.dbroom.RoomActivity;
 import com.kky.example.mevent.dbroom.RoomActivity2;
 import com.kky.example.mevent.gmap.GMapActivity;
@@ -21,12 +20,16 @@ import com.kky.example.mui.FullScreenActivity;
 import com.kky.example.mui.IconTextViewActivity;
 import com.kky.example.mui.LeftMenuActivity;
 import com.kky.example.mui.PopwindowActivity;
+import com.kky.example.mui.ShapeActivity;
+import com.kky.example.mui.dialog.DialogStyleActivity;
 import com.kky.example.mview.BottomSheetActivity;
 import com.kky.example.mview.DrawableResourceActivity;
+import com.kky.example.mview.GridLayoutActivity;
 import com.kky.example.mview.GridLayoutActivity2;
 import com.kky.example.mview.InputManagerActivity;
 import com.kky.example.mview.KeyBoardActivity;
 import com.kky.example.mview.RecyclerViewActivity;
+import com.kky.example.mview.ScrollInputActivity;
 import com.kky.example.mview.ScrollingActivity;
 import com.kky.example.mview.SoftInputActivity;
 import com.kky.example.mview.SoftInputActivity2;
@@ -34,7 +37,7 @@ import com.kky.example.mview.SpinnerActivity;
 import com.kky.example.mview.StickySectionActivity;
 import com.kky.example.mview.TextSizeActivity;
 import com.kky.example.mview.ViewDisActivity;
-import com.kky.example.widget.IconTextView;
+import com.kky.example.mview.recycler.SecondRecyclerView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -78,6 +81,8 @@ public class ActivityHelp {
         IntentHelp.INSTANCE.addActivity(activity, BasicActivity.class, myData);
         IntentHelp.INSTANCE.addActivity(activity, FullScreenActivity.class, myData);
         IntentHelp.INSTANCE.addWithTitle(activity, "自定义view dp获取", IconTextViewActivity.class, myData);
+        IntentHelp.INSTANCE.addWithTitle(activity, "代码编写shape", ShapeActivity.class, myData);
+        IntentHelp.INSTANCE.addWithTitle(activity, "dialog样式的activity", DialogStyleActivity.class, myData);
     }
 
     private static void setViewList(Activity activity, List<Map<String, Object>> myData) {
@@ -93,6 +98,9 @@ public class ActivityHelp {
         IntentHelp.INSTANCE.addActivity(activity, TextSizeActivity.class, myData);
         IntentHelp.INSTANCE.addActivity(activity, GridLayoutActivity2.class, myData);
         IntentHelp.INSTANCE.addActivity(activity, KeyBoardActivity.class, myData);
+        IntentHelp.INSTANCE.addWithTitle(activity, "GridLayoutManager", GridLayoutActivity.class, myData);
+        IntentHelp.INSTANCE.addWithTitle(activity, "ScrollInputActivity", ScrollInputActivity.class, myData);
+        IntentHelp.INSTANCE.addWithTitle(activity, "SecondRecyclerView", SecondRecyclerView.class, myData);
     }
 
 
@@ -102,7 +110,6 @@ public class ActivityHelp {
         IntentHelp.INSTANCE.addActivity(activity, RoomActivity2.class, myData);
         IntentHelp.INSTANCE.addActivity(activity, MyWebViewActivity.class, myData);
         IntentHelp.INSTANCE.addActivity(activity, AnnotationTestActivity.class, myData);
-        IntentHelp.INSTANCE.addWithTitle(activity, "简单使用Dagger 2", D2Simple1Activity.class, myData);
         IntentHelp.INSTANCE.addWithTitle(activity, "封装网络请求测试 2", NetWorkActivity.class, myData);
         IntentHelp.INSTANCE.addWithTitle(activity, "查询通讯录 2", ContactActivity.class, myData);
         IntentHelp.INSTANCE.addWithTitle(activity, "GMap使用", GMapActivity.class, myData);

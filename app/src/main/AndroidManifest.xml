@@ -31,7 +31,8 @@
         <activity android:name=".mview.SpinnerActivity" />
         <activity
             android:name=".MainActivity"
-            android:label="@string/title_activity_main2">
+            android:label="@string/title_activity_main2"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -41,9 +42,15 @@
         <activity android:name=".mevent.webview.MyWebViewActivity" />
         <activity android:name=".mui.PopwindowActivity" />
         <activity android:name=".mui.CoordinateActivity" />
-        <activity android:name=".mui.CoordinateActivity2"  android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".mui.dialog.DialogStyleActivity"
+            android:theme="@style/TransparentTheme" />
+        <activity
+            android:name=".mui.CoordinateActivity2"
+            android:theme="@style/AppTheme" />
         <activity android:name=".mui.BasicActivity" />
         <activity android:name=".mui.IconTextViewActivity" />
+        <activity android:name=".mui.ShapeActivity" />
         <activity
             android:name=".mui.FullScreenActivity"
             android:theme="@style/NoTitleTranslucentTheme" />
@@ -54,11 +61,14 @@
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".mview.BottomSheetActivity" />
         <activity android:name=".mview.RecyclerViewActivity" />
+        <activity android:name=".mview.recycler.SecondRecyclerView" />
         <activity android:name=".mview.StickySectionActivity" />
         <activity android:name=".mview.SoftInputActivity" />
         <activity android:name=".mview.DrawableResourceActivity" />
         <activity android:name=".mview.TextSizeActivity" />
+        <activity android:name=".mview.GridLayoutActivity" />
         <activity android:name=".mview.GridLayoutActivity2" />
+        <activity android:name=".mview.ScrollInputActivity" />
         <activity android:name=".mview.SchemeReceiverActivity">
             <intent-filter>
                 <!--action.VIEW和category.DEFAULT必须设置-->
@@ -94,12 +104,13 @@
         <activity android:name=".mevent.dbroom.RoomActivity" />
         <activity android:name=".mevent.dbroom.RoomActivity2" />
         <activity android:name=".mevent.annotation.AnnotationTestActivity" />
-        <activity android:name=".mevent.d2.D2Simple1Activity" />
         <activity android:name=".mevent.retrofit.NetWorkActivity" />
         <activity android:name=".mevent.ContactActivity" />
         <activity android:name=".mevent.ManifestPlaceHolderActivity" />
         <activity android:name=".mevent.gmap.GMapActivity" />
         <activity android:name=".meffect.wheel.WheelViewActivity" />
+        <activity android:name=".mevent.intent.AActivity" />
+        <activity android:name=".mevent.intent.BActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

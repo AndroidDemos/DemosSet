@@ -1,8 +1,10 @@
 package com.kky.example.mui
 
 import android.os.Bundle
+import android.util.Log
 import com.kky.example.R
 import com.kky.example.base.activity.BaseActivity
+import com.kky.example.util.PinCheckUtil
 import kotlinx.android.synthetic.main.activity_basic.*
 
 /**
@@ -17,6 +19,12 @@ class BasicActivity : BaseActivity() {
         setContentView(R.layout.activity_basic)
         button.setOnClickListener {
             textView.text = "hello ,i'm first"
+            var pwd = editTextUserInput.text.toString()
+            var passwordAvailable = PinCheckUtil.isPasswordAvailable(pwd)
+            printLoge("valuable--$passwordAvailable")
         }
+    }
+    fun printLoge(args: String?) {
+        Log.e("zeus-tag", args)
     }
 }

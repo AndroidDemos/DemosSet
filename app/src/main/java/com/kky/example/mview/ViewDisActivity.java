@@ -1,7 +1,9 @@
 package com.kky.example.mview;
 
 import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -34,13 +36,17 @@ public class ViewDisActivity extends BaseActivity implements View.OnClickListene
         tag = getTAG();
         myTextView = findViewById(R.id.m_tv);
         myTextView.setOnClickListener(this);
-        myTextView.setOnTouchListener(this);
-        AppCompatActivity appCompatActivity;
+        myTextView.setOnClickListener(this);
+        findViewById(R.id.constraintLayout).setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        Log.i(tag, "MyTextView onClick");
+        if (v.getId() == R.id.constraintLayout) {
+            Log.i(tag, "Constraint onClick");
+        } else if (v.getId() == R.id.m_tv) {
+            Log.i(tag, "MyTextView onClick");
+        }
     }
 
     //activity 触碰事件
@@ -75,6 +81,8 @@ public class ViewDisActivity extends BaseActivity implements View.OnClickListene
                 break;
         }
         return super.dispatchTouchEvent(ev);//不处理继续 --传给当前view的同名方法（此处MyTextView的dispatchTouchEvent）
+//        return true;//不分发给子控件
+//        return true/false都表示事件被消费掉了
     }
 
     //activity事件消费

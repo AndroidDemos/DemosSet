@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.layout_colors.*
  */
 class ColorActivity : AppCompatActivity() {
     private var whiteParsed = 1 //
-
+    var args = "[Long press copy details. Proceed to Juancash and received red envelope. Received immediately 12345687] If not yet installed, click www.juancash.com to install fastly"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,6 +50,22 @@ class ColorActivity : AppCompatActivity() {
         val bgColor1 = title_bar.bgColor
         print("bgColor1----$bgColor1")
         text1.setTextColor(256243100)
+        text1.setOnClickListener {
+            getArgss()
+        }
+        text2.setOnClickListener {
+            var str = ClipBoardUtil.paste(this)
+            print("copy$str")
+        }
+    }
+
+    fun getArgss(): String {
+        var args1 = "immediately "
+        var indexStart = args.indexOf(args1) + args1.length
+        var indexEnd = args.indexOf("]")
+        var result = args.substring(indexStart, indexEnd)
+        print(result)
+        return result
     }
 
     companion object {

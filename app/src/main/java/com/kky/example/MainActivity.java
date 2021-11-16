@@ -5,15 +5,13 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.kky.example.mevent.d2.A;
+import com.kky.example.util.LocalPrinter;
 //import com.kky.example.mevent.d2.DaggerMainComponent;
 
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Map;
-
-import javax.inject.Inject;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -61,7 +59,14 @@ public class MainActivity extends AppCompatActivity implements NavItemFragment.O
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        LocalPrinter.INSTANCE.printLocal("onNewIntent");
+    }
+
     private void setFragmentData() {
+        LocalPrinter.INSTANCE.printLocal("setFragmentData()");
         fragmentArray = new ArrayList<>();
         fragmentArray.add(NavItemFragment.Companion.newInstance(0));
         fragmentArray.add(NavItemFragment.Companion.newInstance(1));

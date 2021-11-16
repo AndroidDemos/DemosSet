@@ -26,15 +26,15 @@ public class MyTextView extends androidx.appcompat.widget.AppCompatTextView {
                 Log.i(tag, "dispatchTouchEvent   ACTION_UP");
                 break;
             case MotionEvent.ACTION_MOVE:
-                Log.i(tag, "dispatchTouchEvent   ACTION_MOVE");
+//                Log.i(tag, "dispatchTouchEvent   ACTION_MOVE");
                 break;
             case MotionEvent.ACTION_DOWN:
                 Log.i(tag, "dispatchTouchEvent   ACTION_DOWN");
                 break;
         }
         return super.dispatchTouchEvent(event);//返回super 父类同名方法 故事的进展 step**2
+//        return true;//不处理，丢给回给上级(TextView的点击事件将无法触发)
     }
-
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()) {
@@ -42,13 +42,14 @@ public class MyTextView extends androidx.appcompat.widget.AppCompatTextView {
                 Log.i(tag, "onTouchEvent   ACTION_UP");
                 break;
             case MotionEvent.ACTION_MOVE:
-                Log.i(tag, "onTouchEvent   ACTION_MOVE");
+//                Log.i(tag, "onTouchEvent   ACTION_MOVE");
                 break;
             case MotionEvent.ACTION_DOWN:
                 Log.i(tag, "onTouchEvent   ACTION_DOWN");
                 break;
         }
         return super.onTouchEvent(event);//故事的起源 step**4    处理MyTextView的onTouchEvent 返回super 父类同名方法
+//        return true;//不处理，丢给回给上级(TextView的点击事件将无法触发)
     }
 
 

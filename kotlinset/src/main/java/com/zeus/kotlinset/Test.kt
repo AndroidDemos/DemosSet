@@ -17,6 +17,9 @@ fun main() {
 
 
     try {
+        for (i in 0..10) {
+            print("code -- $i")
+        }
         var encodeToString = Base64.encodeToString(str1.toByteArray(Charsets.UTF_8), Base64.NO_WRAP)
         print("after base64Encode—$encodeToString\n")
         var deCode = Base64.decode(str1, Base64.NO_WRAP)

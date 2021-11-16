@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.7">
+      <module name="DemosSet.app" target="1.8" />
+      <module name="DemosSet.appcolorconfig" target="1.8" />
+      <module name="DemosSet.flex" target="1.8" />
+      <module name="DemosSet.kotlinset" target="1.8" />
+      <module name="DemosSet.mvvmapp" target="1.8" />
+      <module name="DemosSet.wheel" target="1.8" />
       <module name="javalib" target="1.7" />
     </bytecodeTargetLevel>
   </component>

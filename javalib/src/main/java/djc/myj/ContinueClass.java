@@ -5,7 +5,7 @@ package djc.myj;
  * @name DemosSet
  * @time 2018/5/24 17:01
  * @change time
- * @class describe
+ * @class describe 分割字符串相关
  */
 public class ContinueClass {
     public static void main(String[] args) {
@@ -21,5 +21,14 @@ public class ContinueClass {
         System.out.println("found " + count
                 + "  h ");
         System.out.println(searchstr);
+        String aaxx = "+62 +62 6365263652";
+        String[] split = aaxx.split(" ");
+        for (String s : split) {
+            System.out.println("-------" + s + "\n");
+        }
+        int length1 = split.length;
+        if (length1 > 1) {
+            System.out.println("---length-1----" + split[length1 - 1] + "\n");
+        }
     }
 }

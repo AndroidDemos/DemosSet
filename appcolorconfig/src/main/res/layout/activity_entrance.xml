@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/button_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Status" />
+
+    <Button
+        android:id="@+id/button_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nav" />
+
+    <Button
+        android:id="@+id/button_status_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="StatusNav" />
+
+    <Button
+        android:id="@+id/button_fit_system"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="FitSystem" />
+    <Button
+        android:id="@+id/button_to_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="To Main" />
+
+</LinearLayout>

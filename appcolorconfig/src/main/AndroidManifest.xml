@@ -12,12 +12,32 @@
         <activity
             android:name=".MainActivity"
             android:windowSoftInputMode="adjustResize">
+            <!--            <intent-filter>-->
+            <!--                <action android:name="android.intent.action.MAIN" />-->
+
+            <!--                <category android:name="android.intent.category.LAUNCHER" />-->
+            <!--            </intent-filter>-->
+        </activity>
+        <activity android:name=".EntranceActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+        <activity
+            android:name=".NavClass"
+            android:theme="@style/AppNav" />
+        <activity
+            android:name=".StatusBarClass"
+            android:theme="@style/AppStateBar" />
+        <activity
+            android:name=".StatusNavClass"
+            android:theme="@style/StateBarNav" />
+        <activity
+            android:name=".FitSystemClass"
+            android:theme="@style/StateBarNav" />
     </application>
 
 </manifest>

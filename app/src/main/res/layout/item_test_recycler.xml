@@ -4,6 +4,7 @@
     android:id="@+id/ll_container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:descendantFocusability="beforeDescendants"
     android:orientation="vertical">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -32,6 +33,19 @@
             android:paddingRight="8dp"
             android:text="12:45:12"
             android:textColor="@color/colorAccent" />
+
+        <EditText
+            android:id="@+id/et_content"
+            android:layout_width="wrap_content"
+            android:imeOptions="actionUnspecified"
+            android:gravity="center"
+            android:background="@null"
+            android:textColorHint="#eeee22"
+            android:hint="请输入"
+            android:visibility="gone"
+            android:textColor="@color/blue_common"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content" />
 
         <View
             android:layout_width="match_parent"

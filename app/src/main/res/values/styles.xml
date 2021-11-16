@@ -81,4 +81,24 @@
         <item name="android:backgroundDimEnabled">true</item>
     </style>
 
+    <style name="TransparentTheme" parent="Theme.AppCompat.NoActionBar"> <!-- 边框 -->
+        <item name="android:windowFrame">@android:color/transparent</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 半透明 -->
+<!--        <item name="android:windowIsTranslucent">true</item>-->
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 背景透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@style/anim_fade</item>
+        <item name="android:backgroundDimAmount">0.6</item>
+<!--        <item name="android:windowAnimationStyle">@null</item>-->
+    </style>
+    <style name="anim_fade" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/fast_fade_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/fast_fade_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/fast_fade_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/fast_fade_out</item>
+    </style>
 </resources>

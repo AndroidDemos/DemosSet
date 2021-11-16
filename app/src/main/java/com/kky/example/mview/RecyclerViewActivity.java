@@ -1,15 +1,18 @@
 package com.kky.example.mview;
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
+import android.widget.RadioGroup;
 
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.RadioGroup;
-import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.kky.example.R;
@@ -21,6 +24,8 @@ import com.kky.example.widget.decor.SimpleDividerDecoration;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * @author Zeus QQ:1946690608
@@ -37,6 +42,7 @@ public class RecyclerViewActivity extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN | WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
         setContentView(R.layout.activity_recycler_view);
         initView();
     }
@@ -101,5 +107,54 @@ public class RecyclerViewActivity extends BaseActivity {
                 adapter.notifyItemChanged(position);
             }
         });
+
+//        Timer timer = new Timer();
+//        timer.schedule(new TimerTask() {
+//            public void run() {
+//                hideSoftKeyboard(RecyclerViewActivity.this);
+//            }
+//        }, 400);
     }
+    /**
+     * 点击空白处隐藏软键盘
+     */
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        if (ev.getAction() == MotionEvent.ACTION_DOWN) {
+            View v = getCurrentFocus();
+            if (isShouldHideInput(v, ev)) {
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                if (imm != null && v != null && v.getWindowToken() != null) {
+                    imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+                }
+            }
+            return super.dispatchTouchEvent(ev);
+        }
+        // 必不可少，否则所有的组件都不会有TouchEvent了
+        return getWindow().superDispatchTouchEvent(ev) || onTouchEvent(ev);
+    }
+    public boolean isShouldHideInput(View v, MotionEvent event) {
+        if (v != null && (v instanceof EditText)) {
+            int[] leftTop = {0, 0};
+            //获取输入框当前的location位置
+            v.getLocationInWindow(leftTop);
+            int left = leftTop[0];
+            int top = leftTop[1];
+            int bottom = top + v.getHeight();
+            int right = left + v.getWidth();
+            return (!(event.getX() > left && event.getX() < right
+                    && event.getY() > top && event.getY() < bottom));
+        }
+        return false;
+    }
+
+    void hideSoftKeyboard(Activity activity) {
+        View view = activity.getCurrentFocus();
+        if (view != null) {
+            InputMethodManager inputMethodManager =
+                    (InputMethodManager) activity.getSystemService(INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+        }
+    }
+
 }

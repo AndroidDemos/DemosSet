@@ -12,19 +12,19 @@
         app:flexWrap="wrap"
         app:justifyContent="space_between">
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/text1"
             style="@style/ItemStyle"
             android:layout_width="72dp"
             android:layout_height="wrap_content"
-            android:text="1" />
+            android:text="2" />
 
         <TextView
             android:id="@+id/text2"
             style="@style/ItemStyle"
             android:layout_width="72dp"
             android:layout_height="wrap_content"
-            android:text="2" />
+            android:text="粘贴" />
 
         <TextView
             android:id="@+id/text3"
@@ -94,9 +94,13 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="42dp"
         android:layout_marginRight="42dp"
-        android:breakStrategy="balanced"
-        android:text="到账时间几分钟内（转账时间:00:00-22:30,GMT+8）"
-        android:textSize="14sp" />
+        android:autoSizeMaxTextSize="30sp"
+        android:autoSizeStepGranularity="2sp"
+        android:maxLines="1"
+        android:text="到账时间几分钟内（转账时间:00:00-22:30,GMT+8）到账时间几分钟内（转账时间:00:00-22:30,GMT+8）到账时间几分钟内（转账时间:00:00-22:30,GMT+8）到账时间几分钟内（转账时间:00:00-22:30,GMT+8）"
+        android:textSize="14sp"
+        app:autoSizeTextType="uniform" />
+
     <com.eus.flex.JustifyTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

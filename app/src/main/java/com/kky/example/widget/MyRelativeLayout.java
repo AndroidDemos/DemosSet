@@ -27,7 +27,7 @@ public class MyRelativeLayout extends RelativeLayout {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        switch (ev.getAction()){
+        switch (ev.getAction()) {
             case MotionEvent.ACTION_UP:
                 Log.i(tag, "dispatchTouchEvent ACTION_UP");
                 break;
@@ -43,7 +43,7 @@ public class MyRelativeLayout extends RelativeLayout {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        switch (ev.getAction()){
+        switch (ev.getAction()) {
             case MotionEvent.ACTION_UP:
                 Log.i(tag, "onInterceptTouchEvent ACTION_UP");
                 break;
@@ -55,11 +55,12 @@ public class MyRelativeLayout extends RelativeLayout {
                 break;
         }
         return super.onInterceptTouchEvent(ev);
+//        return true;拦截后，子控件无法收到事件
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        switch (event.getAction()){
+        switch (event.getAction()) {
             case MotionEvent.ACTION_UP:
                 Log.i(tag, "onTouchEvent ACTION_UP");
                 break;
