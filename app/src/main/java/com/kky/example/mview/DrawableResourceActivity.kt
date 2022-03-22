@@ -9,6 +9,7 @@ import android.os.Bundle
 import com.kky.example.MainActivity
 import com.kky.example.R
 import com.kky.example.base.activity.BaseActivity
+import com.kky.example.util.LocalPrinter
 import com.kky.example.widget.image.HexagonDrawable
 import kotlinx.android.synthetic.main.activity_drawable_resource.*
 
@@ -21,13 +22,26 @@ class DrawableResourceActivity : BaseActivity() {
         setContentView(R.layout.activity_drawable_resource)
         initView()
         initData()
+        var arrayList = ArrayList<String>()
+        if(arrayList.isNullOrEmpty()){
+            LocalPrinter.printLocal("---------------------")
+        }else{
+            LocalPrinter.printLocal("*********************")
+        }
     }
 
     private fun initView() {
         iv1.setImageResource(R.drawable.score)
         iv2.setImageResource(R.drawable.score)
         iv3.setImageResource(R.drawable.score)
-        iv4.setImageDrawable(HexagonDrawable(BitmapFactory.decodeResource(resources, R.drawable.inset)))
+        iv4.setImageDrawable(
+            HexagonDrawable(
+                BitmapFactory.decodeResource(
+                    resources,
+                    R.drawable.inset
+                )
+            )
+        )
         iv1.setImageLevel(0)
         iv2.setImageLevel(1)
         iv3.setImageLevel(2)// ImgeView.setImageLevel相关用法，不同状态可以用上
@@ -49,7 +63,9 @@ class DrawableResourceActivity : BaseActivity() {
 //        var mixDrawable = iv41.drawable as ClipDrawable
 //        mixDrawable.level = 9000
         iv1.setOnClickListener {
-            var intent = Intent(this, MainActivity::class.java)//singleTask模式的activity重新打开直接走onNewIntent方法
+            var intent =
+                Intent(this, MainActivity::class.java)//singleTask模式的activity重新打开直接走onNewIntent方法
+            intent.putExtra("key_content", "value-content")
             this.startActivity(intent)
         }
     }

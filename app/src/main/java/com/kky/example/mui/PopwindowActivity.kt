@@ -4,13 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.kky.example.R
 import com.kky.example.base.activity.BaseActivity
+import com.kky.example.util.LocalPrinter
 import com.kky.example.util.ToastUtils
 import com.kky.example.widget.CustomPopWindow
 import kotlinx.android.synthetic.main.activity_popwindow.*
+import kotlinx.android.synthetic.main.merge_verticle_2_bt_layout.*
 
 /**
  * @name DemosSet
@@ -36,6 +39,7 @@ class PopwindowActivity : BaseActivity(), View.OnClickListener {
                 showPopListView()
             }
             button5 -> {
+                ToastUtils.makeText("button--5")
             }
             button6 -> {
             }
@@ -128,6 +132,12 @@ class PopwindowActivity : BaseActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_popwindow)
+        val include1 = findViewById<View>(R.id.include1)
+        if (include1 == null) {
+            LocalPrinter.printLocal("include is null")
+        } else {
+            include1.findViewById<Button>(R.id.button5).setOnClickListener(this)
+        }
         setListeners()
     }
 

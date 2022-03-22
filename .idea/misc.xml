@@ -19,10 +19,14 @@
         <entry key="..\:/StudioProjects/DemosSet/app/src/main/res/layout/item_second_child.xml" value="0.36614583333333334" />
         <entry key="..\:/StudioProjects/DemosSet/app/src/main/res/layout/item_second_recycler.xml" value="0.36614583333333334" />
         <entry key="..\:/StudioProjects/DemosSet/app/src/main/res/layout/item_test_recycler.xml" value="0.17806484295845998" />
+        <entry key="..\:/project/DemosSet/app/src/main/res/layout/activity_a.xml" value="0.36614583333333334" />
+        <entry key="..\:/project/DemosSet/app/src/main/res/layout/activity_input_manager.xml" value="0.36614583333333334" />
+        <entry key="..\:/project/DemosSet/app/src/main/res/layout/activity_popwindow.xml" value="0.36614583333333334" />
+        <entry key="..\:/project/DemosSet/app/src/main/res/layout/merge_verticle_2_bt_layout.xml" value="0.36614583333333334" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

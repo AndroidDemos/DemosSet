@@ -6,6 +6,7 @@ import android.content.res.ColorStateList;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.Spanned;
@@ -32,6 +33,7 @@ import com.kky.example.util.gson.JsHelp;
 
 import org.jetbrains.annotations.Nullable;
 
+import java.io.File;
 import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -62,7 +64,7 @@ public class InputManagerActivity extends BaseActivity {
         button = findViewById(R.id.button10);
         button12 = findViewById(R.id.button12);
 
-
+        printPaths();
         Timer timer = new Timer();
         Timer timer2 = new Timer();
         timer.schedule(new TimerTask() {
@@ -138,6 +140,42 @@ public class InputManagerActivity extends BaseActivity {
 
             }
         });
+    }
+
+    private void printPaths() {
+        String DOWNLOADS = this.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS).toString();
+        String ALARMS = this.getExternalFilesDir(Environment.DIRECTORY_ALARMS).toString();
+        File PICTURES = this.getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        String MOVIES = this.getExternalFilesDir(Environment.DIRECTORY_MOVIES).toString();
+        String DIRECTORY_DOCUMENTS = this.getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS).toString() + "/wers/";
+        File DCIM = this.getExternalFilesDir(Environment.DIRECTORY_DCIM);
+        if (DCIM.isDirectory()) {
+            LocalPrinter.printLocal("isDirectory true");
+        } else {
+            LocalPrinter.printLocal("isDirectory false");
+        }
+        if (PICTURES.isDirectory()) {
+            LocalPrinter.printLocal("PICTURES isDirectory true");
+        } else {
+            LocalPrinter.printLocal("PICTURES isDirectory false");
+        }
+        String hengGang = this.getExternalFilesDir("/").toString();
+        LocalPrinter.printLocal(DOWNLOADS);
+        LocalPrinter.printLocal(ALARMS);
+        LocalPrinter.printLocal(PICTURES.toString());
+        File dirDOCUMENTS = new File(DIRECTORY_DOCUMENTS);
+        if (dirDOCUMENTS.isDirectory()) {
+            LocalPrinter.printLocal("dirDOCUMENTS isDirectory true");
+        } else {
+            LocalPrinter.printLocal("dirDOCUMENTS isDirectory false");
+            dirDOCUMENTS.mkdirs();
+            LocalPrinter.printLocal("dirDOCUMENTS isDirectory 222--" + dirDOCUMENTS.isDirectory() + "===" + dirDOCUMENTS.getPath());
+        }
+
+        LocalPrinter.printLocal(dirDOCUMENTS.getPath());
+        LocalPrinter.printLocal(DIRECTORY_DOCUMENTS);
+        LocalPrinter.printLocal(DCIM.toString());
+        LocalPrinter.printLocal(hengGang);
     }
 
 

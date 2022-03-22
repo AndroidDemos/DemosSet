@@ -2,12 +2,12 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.7">
-      <module name="DemosSet.app" target="1.8" />
-      <module name="DemosSet.appcolorconfig" target="1.8" />
-      <module name="DemosSet.flex" target="1.8" />
-      <module name="DemosSet.kotlinset" target="1.8" />
-      <module name="DemosSet.mvvmapp" target="1.8" />
-      <module name="DemosSet.wheel" target="1.8" />
+      <module name="DemosSet.app" target="11" />
+      <module name="DemosSet.appcolorconfig" target="11" />
+      <module name="DemosSet.flex" target="11" />
+      <module name="DemosSet.kotlinset" target="11" />
+      <module name="DemosSet.mvvmapp" target="11" />
+      <module name="DemosSet.wheel" target="11" />
       <module name="javalib" target="1.7" />
     </bytecodeTargetLevel>
   </component>

@@ -2,9 +2,11 @@ package com.kky.example;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.kky.example.base.activity.BaseActivity;
 import com.kky.example.util.LocalPrinter;
 //import com.kky.example.mevent.d2.DaggerMainComponent;
 
@@ -20,7 +22,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-public class MainActivity extends AppCompatActivity implements NavItemFragment.OnListFragmentInteractionListener {
+public class MainActivity extends BaseActivity implements NavItemFragment.OnListFragmentInteractionListener {
 
     private ViewPager view_pager_main;
 
@@ -62,7 +64,10 @@ public class MainActivity extends AppCompatActivity implements NavItemFragment.O
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
-        LocalPrinter.INSTANCE.printLocal("onNewIntent");
+        String key_content = intent.getStringExtra("key_content");
+        if (!TextUtils.isEmpty(key_content)) {
+            LocalPrinter.printLocal("content--" + key_content);
+        }
     }
 
     private void setFragmentData() {
