@@ -41,6 +41,49 @@
             app:imgTop="@mipmap/icon_my_help"
             app:it_iv_size="80dp"
             app:it_text_size="28sp" />
+
+        <RadioGroup
+            android:id="@+id/radio"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:layout_margin="5dp"
+                android:id="@+id/rb_m"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:text="m-dpi" />
+
+            <RadioButton
+                android:id="@+id/rb_h"
+                android:layout_width="wrap_content"
+                android:background="@color/white"                android:layout_margin="5dp"
+
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="h-dpi" />
+
+            <RadioButton
+                android:id="@+id/rb_xh"
+                android:background="@color/white"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="xh-dpi" />
+
+            <RadioButton
+                android:id="@+id/rb_xxh"
+                android:background="@color/white"
+                android:layout_margin="5dp"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="xxh-dpi" />
+        </RadioGroup>
     </LinearLayout>
 
 </ScrollView>

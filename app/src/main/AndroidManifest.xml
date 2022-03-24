@@ -111,6 +111,7 @@
         <activity android:name=".meffect.wheel.WheelViewActivity" />
         <activity android:name=".mevent.intent.AActivity" />
         <activity android:name=".mevent.intent.BActivity" />
+        <activity android:name=".mui.ImageViewPreviewActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
