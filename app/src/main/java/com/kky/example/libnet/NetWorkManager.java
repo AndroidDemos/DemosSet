@@ -2,6 +2,8 @@ package com.kky.example.libnet;
 
 import android.os.Bundle;
 
+import com.kky.example.libnet.convert.CustomizeGsonConverterFactory;
+
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -49,7 +51,8 @@ public class NetWorkManager {
                 .client(client)
                 .baseUrl(Request.HOST)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .addConverterFactory(GsonConverterFactory.create())
+//                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(CustomizeGsonConverterFactory.create())
                 .build();
     }
 

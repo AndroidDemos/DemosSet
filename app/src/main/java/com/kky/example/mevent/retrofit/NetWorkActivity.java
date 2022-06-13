@@ -5,8 +5,10 @@ import android.util.Log;
 
 import com.kky.example.R;
 import com.kky.example.base.activity.BaseActivity;
+import com.kky.example.bean.AccountVOBean;
 import com.kky.example.bean.LoginOrRegisterBean;
 import com.kky.example.bean.LoginOrRegisterData;
+import com.kky.example.bean.UserVOBean;
 import com.kky.example.libnet.ApiException;
 import com.kky.example.libnet.NetWorkManager;
 import com.kky.example.libnet.Response;
@@ -49,11 +51,14 @@ public class NetWorkActivity extends BaseActivity {
 
         Disposable dissposable = observable.compose(ResponseTransformer.handleResult())
                 .compose(SchedulerProvider.getInstance().applySchedulers())
-                .subscribe(cardBeans -> {
-                    Log.e("card-size", cardBeans.getAccountVO() + "account?");
+                .subscribe(loginOrRegisterData -> {
+                    AccountVOBean accountVO = loginOrRegisterData.getAccountVO();
+                    Log.e("login-or", accountVO + "account?" + accountVO.getReceiptCodeUrl());
+                    UserVOBean userVO = loginOrRegisterData.getUserVO();
+                    Log.e("login-or", userVO + "userVO?" + userVO.getEmail());
                 }, throwable -> {
-                    Log.e("card-size", "error" + throwable.getMessage());
-                    if(throwable instanceof ApiException){
+                    Log.e("login-or", "error" + throwable.getMessage());
+                    if (throwable instanceof ApiException) {
                         ApiException apiException = (ApiException) throwable;
                         ToastUtils.makeText(apiException.getDisplayMessage());
                     }

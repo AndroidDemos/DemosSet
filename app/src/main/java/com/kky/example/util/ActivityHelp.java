@@ -31,6 +31,7 @@ import com.kky.example.mview.KeyBoardActivity;
 import com.kky.example.mview.RecyclerViewActivity;
 import com.kky.example.mview.ScrollInputActivity;
 import com.kky.example.mview.ScrollingActivity;
+import com.kky.example.mview.SnackBarActivity;
 import com.kky.example.mview.SoftInputActivity;
 import com.kky.example.mview.SoftInputActivity2;
 import com.kky.example.mview.SpinnerActivity;
@@ -101,6 +102,7 @@ public class ActivityHelp {
         IntentHelp.INSTANCE.addWithTitle(activity, "GridLayoutManager", GridLayoutActivity.class, myData);
         IntentHelp.INSTANCE.addWithTitle(activity, "ScrollInputActivity", ScrollInputActivity.class, myData);
         IntentHelp.INSTANCE.addWithTitle(activity, "SecondRecyclerView", SecondRecyclerView.class, myData);
+        IntentHelp.INSTANCE.addWithTitle(activity, "snackBar简单应用", SnackBarActivity.class, myData);
     }
 
 
